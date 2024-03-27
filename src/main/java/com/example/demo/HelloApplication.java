@@ -16,7 +16,7 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 1000, 600);
 
         scene.getStylesheets().add(csslink);
-        stage.setTitle("thienan!");
+        stage.setTitle("LOGIN!");
 
         stage.setScene(scene);
         stage.show();

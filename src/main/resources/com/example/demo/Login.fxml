@@ -24,18 +24,13 @@
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <ImageView fitHeight="600.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@icons/test.png" />
-         </image>
-      </ImageView>
-      <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #6030DA;" GridPane.columnIndex="1">
+      <VBox fx:id="main" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
          <children>
             <Pane prefHeight="150.0" prefWidth="200.0">
                <children>
-                  <Label layoutX="182.0" layoutY="98.0" text="WELCOME!" textFill="WHITE">
+                  <Label layoutX="94.0" layoutY="99.0" text="WELCOME BACK!" textFill="WHITE">
                      <font>
-                        <Font name="System Bold" size="26.0" />
+                        <Font name="System Bold" size="35.0" />
                      </font>
                   </Label>
                </children>
@@ -53,13 +48,16 @@
                               </ImageView>
                            </graphic>
                         </Label>
-                        <TextField fx:id="textfield1" prefHeight="40.0" prefWidth="266.0" promptText="Ten Dang Nhap">
+                        <TextField fx:id="textfield1" prefHeight="40.0" prefWidth="266.0" promptText="Username">
                            <HBox.margin>
                               <Insets left="10.0" />
                            </HBox.margin>
                            <padding>
                               <Insets left="20.0" />
                            </padding>
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
                         </TextField>
                      </children>
                   </HBox>
@@ -74,14 +72,17 @@
                               </ImageView>
                            </graphic>
                         </Label>
-                        <PasswordField fx:id="textfield2" prefHeight="40.0" prefWidth="266.0" promptText="Mat Khau">
+                        <PasswordField fx:id="textfield2" prefHeight="40.0" prefWidth="266.0" promptText="Password">
                            <HBox.margin>
                               <Insets left="10.0" />
                            </HBox.margin>
                            <padding>
                               <Insets left="20.0" />
                            </padding>
-                        </PasswordField>
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                     s   </PasswordField>
                      </children>
                   </HBox>
                </children>
@@ -91,15 +92,21 @@
             </VBox>
             <HBox alignment="TOP_CENTER" prefHeight="174.0" prefWidth="500.0">
                <children>
-                  <Button fx:id="signIn" mnemonicParsing="false" prefHeight="26.0" prefWidth="123.0" text="dang nhap">
+                  <Button fx:id="signIn" mnemonicParsing="false" prefHeight="26.0" prefWidth="123.0" text="Sign In">
                      <HBox.margin>
                         <Insets left="49.0" right="20.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="signUp" mnemonicParsing="false" prefHeight="26.0" prefWidth="123.0" text="dang ki" />
+                  <Button fx:id="signUp" mnemonicParsing="false" prefHeight="26.0" prefWidth="123.0" text="Sign Up" />
                </children>
             </HBox>
          </children>
       </VBox>
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="600.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/login.jpg" />
+         </image>
+      </ImageView>
    </children>
 </GridPane>
