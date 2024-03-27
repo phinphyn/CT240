@@ -73,16 +73,16 @@
                            </graphic>
                         </Label>
                         <PasswordField fx:id="textfield2" prefHeight="40.0" prefWidth="266.0" promptText="Password">
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                           <padding>
-                              <Insets left="20.0" />
-                           </padding>
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
-                     s   </PasswordField>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </PasswordField>
                      </children>
                   </HBox>
                </children>
