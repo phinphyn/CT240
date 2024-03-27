@@ -16,7 +16,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.net.Socket;
+
 public class LoginController {
+    private String host = "localhost";
     @FXML
     private TextField textfield1;
     @FXML
@@ -24,19 +29,44 @@ public class LoginController {
     @FXML
     private Button signIn;
     @FXML
+    private Button signUp;
+    @FXML
     private Label testing;
 
+    @FXML
     public void loginButtonOnAction(ActionEvent event) throws IOException, SQLException {
 
-        if (!textfield1.getText().isBlank() && !textfield2.getText().isBlank()){
+        String user_name = textfield1.getText();
+        String password = textfield2.getText();
 
-            validateLogin();
 
+        if (user_name.isEmpty()) {
+            return;
+        }
+
+        System.out.println(user_name + ", " + password);
+
+        try {
+            int port = 2089;
+            Socket s = new Socket(host, port);
+            DataInputStream dataIn = new DataInputStream(s.getInputStream());
+            DataOutputStream dataOut = new DataOutputStream(s.getOutputStream());
+            dataOut.writeUTF(user_name);
+
+            String loginStatus = new DataInputStream(s.getInputStream()).readUTF();
+//            if (loginStatus.equals("You are already logged in")) {
+//
+//            }
+            System.out.println(loginStatus);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        if (!user_name.isEmpty() && !password.isEmpty()) {
+//            validateLogin();
         }
     }
-
-
-
 
 
 
@@ -55,7 +85,6 @@ public class LoginController {
                 if (queryResult.next()) {
                     int count = queryResult.getInt(1);
                     if (count == 1) {
-
 
                         // Open home.fxml
                        testing.setText("success");
