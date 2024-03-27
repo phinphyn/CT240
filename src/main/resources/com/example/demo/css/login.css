@@ -1,4 +1,4 @@
-#textfield1, #textfield2 {
+#textfield1, #textfield2, #reEnterPassword {
     -fx-background-color: #dbb1b1, #fff0f0;
     -fx-background-radius: 30;
     -fx-border-radius: 30;
